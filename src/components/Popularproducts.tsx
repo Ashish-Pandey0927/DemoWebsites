@@ -36,7 +36,7 @@ type Product = {
 const GREEN = "#3BB77E";
 const BLUE = "#67BCEE";
 const RED = "#F74B81";
-const AMBER = "#FDC040";
+// const AMBER = "#FDC040";
 const NAVY = "#2C7BB6";
 
 const categoryIcons: Record<string, LucideIcon> = {
