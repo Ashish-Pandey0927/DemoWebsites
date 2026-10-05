@@ -37,7 +37,8 @@ const GREEN = "#3BB77E";
 const BLUE = "#67BCEE";
 const RED = "#F74B81";
 // const AMBER = "#FDC040";
-const NAVY = "#2C7BB6";
+
+
 
 const categoryIcons: Record<string, LucideIcon> = {
   "E-Cigs": Cigarette,
@@ -54,16 +55,16 @@ const tabs = ["All", "E-Cigs", "Soda & Beverages", "Confections", "Snacks"];
 
 /* Sample data. Replace with rows from your Supabase `products` table. */
 const products: Product[] = [
-  { id: 1, name: "Assorted Potato Chips, Case of 24", category: "Snacks", brand: "CrunchCo", price: 1285, oldPrice: 1480, rating: 2, reviews: 1, moq: 12, badge: { label: "13%", color: GREEN } },
-  { id: 2, name: "Cola Soda 330ml, Multi-Pack Options", category: "Soda & Beverages", brand: "FizzPop", price: 920, priceTo: 4890, rating: 5, reviews: 3, moq: 6, badge: { label: "66%", color: BLUE } },
-  { id: 3, name: "Chocolate Truffle Counter Display Box", category: "Confections", brand: "SweetCraft", price: 1950, oldPrice: 2150, rating: 4, reviews: 1, moq: 10, badge: { label: "8%", color: RED }, tag: { label: "New", color: GREEN } },
-  { id: 4, name: "Disposable Vape Pods, Retail Pack", category: "E-Cigs", brand: "VaporLine", price: 715, oldPrice: 760, rating: 0, reviews: 0, moq: 20, badge: { label: "Out of Stock", color: GREEN }, outOfStock: true },
-  { id: 5, name: "Windproof Lighter Display Set of 12", category: "Novelties", brand: "FlameKing", price: 945, oldPrice: 1030, rating: 5, reviews: 1, moq: 5, badge: { label: "8%", color: GREEN } },
-  { id: 6, name: "Engine Oil 5W-30, 1L Case of 12", category: "Automotive", brand: "AutoPro", price: 3240, oldPrice: 3500, rating: 4, reviews: 2, moq: 2, badge: { label: "2%", color: GREEN } },
-  { id: 7, name: "Kraft Paper Bags, Pack of 500", category: "Bags & Paper Products", brand: "PackWell", price: 1180, oldPrice: 1290, rating: 5, reviews: 4, moq: 4, badge: { label: "8%", color: "#C69A1A" } },
-  { id: 8, name: "Multi-Surface Cleaner 1L, Case of 12", category: "Cleaning Supplies", brand: "SparkClean", price: 1090, oldPrice: 1150, rating: 3, reviews: 2, moq: 6, badge: { label: "6%", color: GREEN } },
-  { id: 9, name: "Energy Drink 250ml, Tray of 24", category: "Soda & Beverages", brand: "VoltUp", price: 1760, oldPrice: 1840, rating: 4, reviews: 5, moq: 3, badge: { label: "4%", color: BLUE } },
-  { id: 10, name: "Gummy Candy Bulk Bag, 5kg", category: "Confections", brand: "SweetCraft", price: 1340, oldPrice: 1390, rating: 5, reviews: 6, moq: 4, badge: { label: "3%", color: NAVY } },
+  { id: 1, name: "Assorted Potato Chips, Case of 24", category: "Snacks", brand: "CrunchCo", price: 1285, oldPrice: 1480, rating: 2, reviews: 1, moq: 12, badge: { label: "13%", color: GREEN }, image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=640&q=85" },
+  { id: 2, name: "Cola Soda 330ml, Multi-Pack Options", category: "Soda & Beverages", brand: "FizzPop", price: 920, priceTo: 4890, rating: 5, reviews: 3, moq: 6, badge: { label: "66%", color: BLUE }, image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=640&q=85" },
+  { id: 3, name: "Chocolate Truffle Counter Display Box", category: "Confections", brand: "SweetCraft", price: 1950, oldPrice: 2150, rating: 4, reviews: 1, moq: 10, badge: { label: "8%", color: RED }, tag: { label: "New", color: GREEN }, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=640&q=85" },
+  { id: 4, name: "Disposable Vape Pods, Retail Pack", category: "E-Cigs", brand: "VaporLine", price: 715, oldPrice: 760, rating: 0, reviews: 0, moq: 20, badge: { label: "Out of Stock", color: GREEN }, outOfStock: true, image: "https://cdn.pixabay.com/photo/2021/08/17/03/08/e-cig-6551804_1280.jpg" },
+  { id: 5, name: "Windproof Lighter Display Set of 12", category: "Novelties", brand: "FlameKing", price: 945, oldPrice: 1030, rating: 5, reviews: 1, moq: 5, badge: { label: "8%", color: GREEN }, image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=640&q=85" },
+  { id: 6, name: "Engine Oil 5W-30, 1L Case of 12", category: "Automotive", brand: "AutoPro", price: 3240, oldPrice: 3500, rating: 4, reviews: 2, moq: 2, badge: { label: "2%", color: GREEN }, image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=640&q=85" },
+  { id: 7, name: "Kraft Paper Bags, Pack of 500", category: "Bags & Paper Products", brand: "PackWell", price: 1180, oldPrice: 1290, rating: 5, reviews: 4, moq: 4, badge: { label: "8%", color: "#C69A1A" }, image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=640&q=85" },
+  { id: 8, name: "Multi-Surface Cleaner 1L, Case of 12", category: "Cleaning Supplies", brand: "SparkClean", price: 1090, oldPrice: 1150, rating: 3, reviews: 2, moq: 6, badge: { label: "6%", color: GREEN }, image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=640&q=85" },
+  { id: 9, name: "Energy Drink 250ml, Tray of 24", category: "Soda & Beverages", brand: "VoltUp", price: 1760, oldPrice: 1840, rating: 4, reviews: 5, moq: 3, badge: { label: "4%", color: BLUE }, image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=640&q=85" },
+  { id: 10, name: "Gummy Candy Bulk Bag, 5kg", category: "Confections", brand: "SweetCraft", price: 1340, oldPrice: 1390, rating: 5, reviews: 6, moq: 4, badge: { label: "3%", color: NAVY }, image: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=640&q=85" },
 ];
 
 const fmt = (n: number) => `${CURRENCY}${n.toLocaleString("en-IN")}`;
@@ -88,7 +89,7 @@ function ProductCard({ p }: { p: Product }) {
   const isRange = p.priceTo !== undefined;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#ECECEC] bg-white p-4 transition-all duration-200 hover:border-[#BCE3C9] hover:shadow-[0_10px_24px_rgba(37,61,78,0.08)]">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#ECECEC] bg-white p-4 transition-all duration-200 hover:-translate-y-1 hover:border-[#BCE3C9] hover:shadow-[0_14px_30px_rgba(37,61,78,0.1)]">
       {p.badge && (
         <span
           style={{ backgroundColor: p.badge.color }}
@@ -107,12 +108,13 @@ function ProductCard({ p }: { p: Product }) {
       )}
 
       {/* Image */}
-      <a href="#" className="flex h-[160px] items-center justify-center">
+      <a href="#" className="flex h-[176px] items-center justify-center overflow-hidden rounded-xl bg-[#F7F9F7]">
         {p.image ? (
           <img
             src={p.image}
             alt={p.name}
-            className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#F2FCE4] transition-transform duration-300 group-hover:scale-105">
