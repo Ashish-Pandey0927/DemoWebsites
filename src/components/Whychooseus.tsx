@@ -64,38 +64,49 @@ const features: Feature[] = [
 export default function WhyChooseUs() {
   return (
     <section className="mx-auto max-w-[1400px] px-4 py-12 lg:px-6 font-[Quicksand,ui-sans-serif,system-ui,sans-serif]">
-      <div className="mx-auto mb-10 max-w-2xl text-center">
-        <span className="inline-block rounded-full bg-[#DEF9EC] px-4 py-1.5 text-[13px] font-bold text-[#3BB77E]">
-          Why Choose Us
-        </span>
-        <h2 className="mt-4 text-[28px] font-bold leading-tight text-[#253D4E] lg:text-[38px]">
-          Everything Your Store Needs from One Supplier
-        </h2>
-        <p className="mt-3 font-[Lato,ui-sans-serif,system-ui,sans-serif] text-[16px] text-[#7E7E7E]">
-          We make buying in bulk simple, so you can spend less time sourcing and more
-          time selling.
-        </p>
-      </div>
+      <div className="overflow-hidden rounded-[32px] bg-[#F3F8F5] px-5 py-10 sm:px-8 sm:py-14 lg:px-14">
+        <div className="mb-9 flex flex-col gap-5 lg:mb-11 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <span className="inline-block rounded-full border border-[#BCE3C9] bg-white px-4 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#25845A]">
+              Why Choose Us
+            </span>
+            <h2 className="mt-4 text-[30px] font-bold leading-tight tracking-tight text-[#253D4E] lg:text-[40px]">
+              A better way to stock your store.
+            </h2>
+          </div>
+          <p className="max-w-lg font-[Lato,ui-sans-serif,system-ui,sans-serif] text-[16px] leading-7 text-[#667781]">
+            Less time sourcing, more confidence in every order. We bring the
+            products, pricing and service independent retailers need to grow.
+          </p>
+        </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((f) => {
-          const Icon = f.icon;
-          return (
-            <div
-              key={f.title}
-              style={{ backgroundColor: f.bg }}
-              className="group rounded-2xl border border-transparent p-7 transition-all duration-200 hover:-translate-y-1 hover:border-[#3BB77E] hover:shadow-[0_10px_24px_rgba(37,61,78,0.08)]"
-            >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-                <Icon size={28} strokeWidth={1.6} style={{ color: f.color }} />
-              </span>
-              <h3 className="mt-5 text-[19px] font-bold text-[#253D4E]">{f.title}</h3>
-              <p className="mt-2 font-[Lato,ui-sans-serif,system-ui,sans-serif] text-[15px] leading-6 text-[#7E7E7E]">
-                {f.text}
-              </p>
-            </div>
-          );
-        })}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((f, index) => {
+            const Icon = f.icon;
+            return (
+              <article
+                key={f.title}
+                className="group rounded-2xl border border-[#E7EEEA] bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[#BCE3C9] hover:shadow-[0_12px_28px_rgba(37,61,78,0.08)] sm:p-7"
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    style={{ backgroundColor: f.bg, color: f.color }}
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-200 group-hover:scale-105"
+                  >
+                    <Icon size={23} strokeWidth={1.8} />
+                  </span>
+                  <span className="text-[12px] font-bold tracking-[0.08em] text-[#B7C5BD]">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-[18px] font-bold text-[#253D4E]">{f.title}</h3>
+                <p className="mt-2 font-[Lato,ui-sans-serif,system-ui,sans-serif] text-[15px] leading-6 text-[#718078]">
+                  {f.text}
+                </p>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

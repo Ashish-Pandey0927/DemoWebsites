@@ -15,6 +15,7 @@ const banners: Banner[] = [
     bg: "#F4EBD9",
     accent: "#E9A23B",
     icon: Popcorn,
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=700&q=85",
     href: "#",
   },
   {
@@ -22,6 +23,7 @@ const banners: Banner[] = [
     bg: "#F6E8E8",
     accent: "#E2678A",
     icon: CupSoda,
+    image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=700&q=85",
     href: "#",
   },
   {
@@ -29,6 +31,7 @@ const banners: Banner[] = [
     bg: "#E7EAF6",
     accent: "#5B6FD6",
     icon: Boxes,
+    image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=700&q=85",
     href: "#",
   },
 ];
@@ -44,8 +47,22 @@ export default function PromoBanners() {
               key={b.title}
               href={b.href}
               style={{ backgroundColor: b.bg }}
-              className="group relative flex h-[170px] items-center overflow-hidden rounded-2xl px-8"
+              className="group relative flex h-[190px] items-center overflow-hidden rounded-2xl px-7 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg sm:px-8"
             >
+              {b.image && (
+                <>
+                  <img
+                    src={b.image}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-y-0 right-0 h-full w-[52%] object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(90deg, ${b.bg} 0%, ${b.bg} 38%, transparent 82%)` }}
+                  />
+                </>
+              )}
               <div className="relative z-10 max-w-[55%]">
                 <h3 className="text-[20px] font-bold leading-snug text-[#253D4E]">
                   {b.title}
@@ -56,10 +73,8 @@ export default function PromoBanners() {
               </div>
 
               {/* Art */}
-              <div className="absolute inset-y-0 right-0 flex w-[45%] items-center justify-center">
-                {b.image ? (
-                  <img src={b.image} alt="" className="h-full w-full object-contain object-right" />
-                ) : (
+              {!b.image && (
+                <div className="absolute inset-y-0 right-0 flex w-[45%] items-center justify-center">
                   <div className="relative flex h-[130px] w-[130px] items-center justify-center">
                     <span
                       className="absolute inset-0 rounded-full opacity-20"
@@ -76,8 +91,8 @@ export default function PromoBanners() {
                       className="relative transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </a>
           );
         })}

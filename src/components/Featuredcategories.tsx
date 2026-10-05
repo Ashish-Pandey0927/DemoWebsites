@@ -24,14 +24,14 @@ type Category = {
 };
 
 const categories: Category[] = [
-  { name: "E-Cigs", items: 11, icon: Cigarette, bg: "#F2FCE4", color: "#5B8C2A", href: "#" },
-  { name: "Soda & Beverages", items: 6, icon: CupSoda, bg: "#FFFCEB", color: "#D99A00", href: "#" },
-  { name: "Confections", items: 6, icon: Candy, bg: "#ECFFEC", color: "#2E9E5B", href: "#" },
-  { name: "Snacks", items: 10, icon: Popcorn, bg: "#FEEFEA", color: "#E2674A", href: "#" },
-  { name: "Novelties", items: 11, icon: Gift, bg: "#FFF3EB", color: "#E0833A", href: "#" },
-  { name: "Automotive", items: 6, icon: Car, bg: "#FFF3FF", color: "#B64FC0", href: "#" },
-  { name: "Bags & Paper Products", items: 10, icon: ShoppingBag, bg: "#F2FCE4", color: "#5B8C2A", href: "#" },
-  { name: "Cleaning Supplies", items: 10, icon: SprayCan, bg: "#FEEFEA", color: "#E2674A", href: "#" },
+  { name: "E-Cigs", items: 11, icon: Cigarette, bg: "#F2FCE4", color: "#5B8C2A", image: "https://cdn.pixabay.com/photo/2021/08/17/03/08/e-cig-6551804_1280.jpg", href: "#" },
+  { name: "Soda & Beverages", items: 6, icon: CupSoda, bg: "#FFFCEB", color: "#D99A00", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Confections", items: 6, icon: Candy, bg: "#ECFFEC", color: "#2E9E5B", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Snacks", items: 10, icon: Popcorn, bg: "#FEEFEA", color: "#E2674A", image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Novelties", items: 11, icon: Gift, bg: "#FFF3EB", color: "#E0833A", image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Automotive", items: 6, icon: Car, bg: "#FFF3FF", color: "#B64FC0", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Bags & Paper Products", items: 10, icon: ShoppingBag, bg: "#F2FCE4", color: "#5B8C2A", image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=240&q=80", href: "#" },
+  { name: "Cleaning Supplies", items: 10, icon: SprayCan, bg: "#FEEFEA", color: "#E2674A", image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=240&q=80", href: "#" },
 ];
 
 const quickLinks = ["E-Cigs", "Soda & Beverages", "Confections", "Snacks"];
@@ -97,11 +97,11 @@ export default function FeaturedCategories() {
               key={c.name}
               href={c.href}
               style={{ backgroundColor: c.bg }}
-              className="group flex h-[150px] w-[140px] shrink-0 snap-start flex-col items-center justify-center rounded-2xl border border-transparent px-2 text-center transition-all duration-200 hover:-translate-y-1 hover:border-[#3BB77E] hover:shadow-[0_8px_20px_rgba(37,61,78,0.08)] sm:w-[150px] lg:w-[calc((100%-7*1rem)/8)] lg:min-w-[140px]"
+              className="group flex h-[168px] w-[140px] shrink-0 snap-start flex-col items-center justify-center rounded-2xl border border-[#EEF1EF] bg-white px-2 text-center shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#BCE3C9] hover:shadow-[0_8px_20px_rgba(37,61,78,0.08)] sm:w-[150px] lg:w-[calc((100%-7*1rem)/8)] lg:min-w-[140px]"
             >
-              <div className="flex h-[60px] w-[60px] items-center justify-center">
+              <div className="flex h-[68px] w-[68px] items-center justify-center overflow-hidden rounded-full bg-[#F7F9F7] p-1">
                 {c.image ? (
-                  <img src={c.image} alt="" className="h-full w-full object-contain" />
+                  <img src={c.image} alt="" loading="lazy" className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-110" />
                 ) : (
                   <Icon size={44} strokeWidth={1.5} style={{ color: c.color }} />
                 )}
